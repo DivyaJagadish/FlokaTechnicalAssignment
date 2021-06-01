@@ -5,10 +5,27 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>Page Title</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-  <script src='main.js'></script>
+
 </head>
 <body>
-  Welcome
+  <section>
+      <h2>Employees</h2>
+    <table  >
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+      </tr>
+      <tr>
+        <% for(let employee in result) { %>
+        <tr>
+             <td><%= result[employee].id%></td>
+             <td><%= result[employee].name%></td>
+           </tr>
+          <% } %>
+    </table>
+  
+  
+     
+  </section>
 </body>
 </html>

@@ -19,7 +19,7 @@ axios
 	.catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
-	res.render("welcome");
+	res.render("welcome", templatevar);
 });
 
 // Server listening in PORT 8080
