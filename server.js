@@ -22,7 +22,23 @@ app.get("/", (req, res) => {
 	res.render("welcome", templatevar);
 });
 
-// Server listening in PORT 8080
+// Axios post request to add new Employee
+app.post("/newemployee", (req, res) => {
+	console.log(req.body);
+	axios({
+		method: "post",
+		url: "http://jsonplaceholder.typicode.com/users",
+		data: {
+			name: req.body.text,
+			email: req.body.id,
+		},
+	}).then((result) => {
+		templatevar["result"].push(result.data);
+
+		res.redirect("/");
+	});
+});
+
 app.listen(PORT, () => {
 	console.log(`Example app listening on port ${PORT}`);
 });

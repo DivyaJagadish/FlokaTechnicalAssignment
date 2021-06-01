@@ -5,27 +5,34 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>Page Title</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
   <section>
       <h2>Employees</h2>
-    <table  >
+    <table  class ="table">
       <tr>
         <th>Id</th>
         <th>Name</th>
+        <th>email-id</th>
       </tr>
       <tr>
         <% for(let employee in result) { %>
         <tr>
              <td><%= result[employee].id%></td>
              <td><%= result[employee].name%></td>
+             <td><%= result[employee].email%></td>
            </tr>
           <% } %>
     </table>
-  
-  
-     
+    <h2>Add New Employee</h2>
+  <form action='/newemployee' method="POST" class="new-task">
+    <textarea name="id" placeholder="Enter email-id" type ="email"></textarea>
+    <textarea name="text" placeholder="New Employee Name"></textarea>
+    <div>
+      <button type="submit" class="add">Add</button>
+    </div>
+  </form>
   </section>
 </body>
 </html>
