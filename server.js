@@ -14,7 +14,6 @@ axios
 	.get("http://jsonplaceholder.typicode.com/users")
 	.then((result) => {
 		templatevar["result"] = result.data;
-		console.log(templatevar);
 	})
 	.catch((err) => console.log(err));
 
@@ -24,17 +23,15 @@ app.get("/", (req, res) => {
 
 // Axios post request to add new Employee
 app.post("/newemployee", (req, res) => {
-	console.log(req.body);
 	axios({
 		method: "post",
 		url: "http://jsonplaceholder.typicode.com/users",
 		data: {
-			name: req.body.text,
+			name: req.body.name,
 			email: req.body.id,
 		},
 	}).then((result) => {
 		templatevar["result"].push(result.data);
-
 		res.redirect("/");
 	});
 });
