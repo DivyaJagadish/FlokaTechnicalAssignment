@@ -1,0 +1,9 @@
+Technical Assignment
+Write a script using Node/Express to make a GET and POST request to the jsonplaceholder API and output data to the console as a simple HTML document.
+Tasks
+Create a Node.js script.
+Have the script initiate an HTTP(S) request to at least one RESTful API. For this assignment choose the REST API from https://jsonplaceholder.typicode.com/
+Make a request to the API using any library (cURL, axios, fetch)
+Decode the result you receive from the API for JSON
+Output data from the result(s) data structure as a simple HTML document (e.g. list of employee names from the API response)
+Upload the file to a new github repository 
